@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gunn Fulwani — Portfolio | Data &amp; Fintech Systems</title>
+  <meta name="description" content="Portfolio of Gunn Fulwani, 3rd-year B.Tech CSE student targeting data and fintech internships. Focus on machine learning, SQL, financial analytics, and clean interfaces.">
+  
+  <!-- Google Fonts: Playfair Display & Inter (Only external resource) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-intro="initial">
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Fixed Trendline Motif (Left Gutter) -->
+  <div class="trendline-gutter" aria-hidden="true">
+    <svg class="trendline-svg" viewBox="0 0 20 1000" preserveAspectRatio="none">
+      <line class="trendline-track" x1="10" y1="0" x2="10" y2="1000" />
+      <line class="trendline-path" id="trendlinePath" x1="10" y1="0" x2="10" y2="1000" />
+      <circle class="trendline-dot" id="trendlineDot" cx="10" cy="0" r="3.5" />
+    </svg>
+  </div>
+
+  <!-- Persistent Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-container">
+      <!-- Monogram button triggers signature intro replay -->
+      <button class="monogram" id="monogramBtn" type="button" aria-label="Gunn Fulwani monogram, click to replay intro animation">
+        GF<span class="monogram-dot" aria-hidden="true"></span>
+      </button>
+
+      <!-- Main Navigation Menu -->
+      <nav class="nav-menu" id="primaryNav" aria-label="Primary navigation">
+        <a href="#work" class="nav-link" data-nav="work">Work</a>
+        <a href="#research" class="nav-link" data-nav="research">Research</a>
+        <a href="#skills" class="nav-link" data-nav="skills">Skills</a>
+        <a href="#about" class="nav-link" data-nav="about">About</a>
+        <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+
+        <!-- Persistent links visible inside mobile menu drawer -->
+        <div class="mobile-menu-links">
+          <a href="https://github.com/gunn0067/self-portfolio-" class="nav-external-link" target="_blank" rel="noopener noreferrer" aria-label="Gunn's GitHub profile, opens in a new tab">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/gunn-fulwani" class="nav-external-link" target="_blank" rel="noopener noreferrer" aria-label="Gunn's LinkedIn profile, opens in a new tab">LinkedIn ↗</a>
+        </div>
+      </nav>
+
+      <!-- Persistent External Links (Desktop) -->
+      <div class="nav-actions">
+        <a href="https://github.com/gunn0067/self-portfolio-" class="nav-external-link" target="_blank" rel="noopener noreferrer" aria-label="Gunn's GitHub profile, opens in a new tab">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/gunn-fulwani" class="nav-external-link" target="_blank" rel="noopener noreferrer" aria-label="Gunn's LinkedIn profile, opens in a new tab">LinkedIn ↗</a>
+      </div>
+
+      <!-- Accessible Mobile Menu Toggle Button -->
+      <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section & Signature Intro Stage -->
+  <section class="hero-section" id="hero" aria-label="Hero Introduction">
+    <div class="hero-inner">
+      <!-- Intro Stage Container -->
+      <div class="intro-stage" id="introStage">
+        <!-- Pill 1: 2026 -->
+        <div class="hero-pill hero-pill-year" id="heroPillYear">
+          <span class="pill-circle-hollow" aria-hidden="true"></span> 2026
+        </div>
+
+        <!-- Left Glass Pill (Over "PORT") -->
+        <div class="glass-pill glass-pill-left" id="glassPillLeft" aria-hidden="true"></div>
+
+        <!-- Giant Word "PORTFOLIO" -->
+        <div class="hero-word-wrap">
+          <h1 class="hero-word halftone-active" id="heroWord">PORTFOLIO</h1>
+        </div>
+
+        <!-- Right Glass Pill (Over "OLIO") -->
+        <div class="glass-pill glass-pill-right" id="glassPillRight" aria-hidden="true"></div>
+
+        <!-- Pill 2: Gunn Fulwani -->
+        <div class="hero-pill hero-pill-name" id="heroPillName">
+          <span class="pill-circle-filled" aria-hidden="true"></span> Gunn Fulwani
+        </div>
+      </div>
+
+      <!-- Hero Aftermath Elements (Fade in sequentially) -->
+      <div class="hero-aftermath" id="heroAftermath">
+        <p class="hero-identity hero-seq-1">B.Tech CSE student building data and finance systems.</p>
+
+        <!-- Sparkline Chart SVG Line -->
+        <div class="hero-sparkline-wrap hero-seq-2" aria-hidden="true">
+          <svg class="hero-sparkline-svg" viewBox="0 0 240 24" fill="none">
+            <path class="sparkline-line" id="sparklinePath" d="M2 18 L38 16 L68 20 L98 8 L132 14 L162 6 L192 11 L238 2" />
+          </svg>
+        </div>
+
+        <!-- Status Chip -->
+        <div class="hero-status-chip hero-seq-3">
+          <span class="status-pulse-dot" aria-hidden="true"></span>
+          Open to internships in data and fintech
+        </div>
+
+        <!-- Hero Persistent Quiet Links Row -->
+        <div class="hero-links-row hero-seq-4">
+          <a href="https://github.com/gunn0067/self-portfolio-" class="hero-quiet-link" target="_blank" rel="noopener noreferrer" aria-label="Gunn's GitHub profile, opens in a new tab">GitHub ↗</a>
+          <span class="hero-dot-sep" aria-hidden="true">·</span>
+          <a href="https://www.linkedin.com/in/gunn-fulwani" class="hero-quiet-link" target="_blank" rel="noopener noreferrer" aria-label="Gunn's LinkedIn profile, opens in a new tab">LinkedIn ↗</a>
+          <span class="hero-dot-sep" aria-hidden="true">·</span>
+          <a href="mailto:fulwanigunn06@gmail.com" class="hero-quiet-link" aria-label="Send email to Gunn Fulwani">Email</a>
+        </div>
+
+        <!-- Scroll Cue -->
+        <a href="#about" class="hero-scroll-cue hero-seq-5" aria-label="Scroll to about section">
+          <span>Explore</span>
+          <svg class="scroll-cue-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <polyline points="7 6 12 11 17 6"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Landmark -->
+  <main class="site-main" id="main-content">
+    <!-- ====================================================================
+         SECTION 1: ABOUT
+         ==================================================================== -->
+    <section class="content-section" id="about" aria-labelledby="aboutHeading">
+      <div class="section-container">
+        <header class="section-header reveal">
+          <div class="section-header-top">
+            <span class="section-accent-tick" aria-hidden="true"></span>
+            <span class="section-eyebrow">Perspective</span>
+          </div>
+          <h2 class="section-title" id="aboutHeading">About</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </header>
+
+        <div class="about-content reveal">
+          <p class="about-statement">
+            I write code that turns messy data into decisions: Python and SQL for the analysis, machine learning for the prediction, JavaScript for the interface. I'm a co-inventor on a patent application for a bank churn predictor, and I backtested a ₹1,000 monthly SIP on Nifty vs Bitcoin: <span class="about-highlight">₹62,000 became ₹4.4 lakh</span>, with an <span class="about-highlight">83% drawdown</span> on the way.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: WORK (TICKER ROWS WITH ACCORDION)
+         ==================================================================== -->
+    <section class="content-section" id="work" aria-labelledby="workHeading">
+      <div class="section-container">
+        <header class="section-header reveal">
+          <div class="section-header-top">
+            <span class="section-accent-tick" aria-hidden="true"></span>
+            <span class="section-eyebrow">Selected Engineering</span>
+          </div>
+          <h2 class="section-title" id="workHeading">Work</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </header>
+
+        <!-- Work Filter Chips -->
+        <div class="work-filters reveal" role="tablist" aria-label="Filter project by category">
+          <button class="filter-chip active" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
+          <button class="filter-chip" type="button" role="tab" aria-selected="false" data-filter="data">Data</button>
+          <button class="filter-chip" type="button" role="tab" aria-selected="false" data-filter="sql">SQL</button>
+          <button class="filter-chip" type="button" role="tab" aria-selected="false" data-filter="finance">Finance</button>
+        </div>
+
+        <!-- Ticker Rows List -->
+        <div class="ticker-list reveal">
+          <!-- Project Row 01 -->
+          <article class="ticker-row" data-category="data finance" id="project-01">
+            <button class="ticker-header" type="button" aria-expanded="false" aria-controls="drawer-01" id="trigger-01">
+              <span class="ticker-index">01</span>
+              <div class="ticker-title-wrap">
+                <h3 class="ticker-name">Nifty 50 vs Bitcoin: SIP Analysis (2017-2022)</h3>
+                <span class="ticker-tags">Python, Pandas, Matplotlib, Seaborn</span>
+              </div>
+              <div class="ticker-metric-wrap">
+                <span class="ticker-metric" data-countup="sip">₹1K/mo SIP: Nifty +54% · Bitcoin +615%</span>
+              </div>
+              <span class="ticker-toggle-btn" aria-hidden="true">+</span>
+            </button>
+            <div class="ticker-drawer" id="drawer-01" role="region" aria-labelledby="trigger-01">
+              <div class="ticker-drawer-inner">
+                <div class="ticker-detail-grid">
+                  <div class="ticker-detail-item">
+                    <span class="ticker-detail-label">Problem</span>
+                    <p class="ticker-detail-text">Stocks or crypto, which would have been better for a monthly SIP?</p>
+                  </div>
+                  <div class="ticker-detail-item">
+                    <span class="ticker-detail-label">Approach</span>
+                    <p class="ticker-detail-text">Backtested a ₹1,000/month SIP on five years of Indian market data (Nifty 50, Bitcoin); analysed the COVID-crash drawdown, India VIX (fear index) vs Nifty, and sector-wise recovery.</p>
+                  </div>
+                  <div class="ticker-detail-item">
+                    <span class="ticker-detail-label">Findings</span>
+                    <p class="ticker-detail-text">₹62,000 invested became ₹95,365 in Nifty and ₹4,43,239 in Bitcoin. COVID-crash drawdown: -45.6% vs -83.3%. Recovery from the bottom: IT +157%, FMCG +57%.</p>
+                  </div>
+                </div>
+                <p class="ticker-limitation">Limitation: a single five-year window; hindsight analysis.</p>
+                <a href="https://github.com/gunn0067/nifty-bitcoin-analysis" class="ticker-github-link" target="_blank" rel="noopener noreferrer" aria-label="View Nifty vs Bitcoin analysis repository on GitHub, opens in a new tab">
+                  View on GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Row 02 -->
+          <article class="ticker-row" data-category="data sql" id="project-02">
+            <button class="ticker-header" type="button" aria-expanded="false" aria-controls="drawer-02" id="trigger-02">
+              <span class="ticker-index">02</span>
+              <div class="ticker-title-wrap">
+                <h3 class="ticker-name">Health Risk Analysis</h3>
+                <span class="ticker-tags">SQL, SQLite, Python</span>
+              </div>
+              <div class="ticker-metric-wrap">
+                <span class="ticker-metric" data-countup="health">5.17 lakh records · 7 datasets</span>
+              </div>
+              <span class="ticker-toggle-btn" aria-hidden="true">+</span>
+            </button>
+            <div class="ticker-drawer" id="drawer-02" role="region" aria-labelledby="trigger-02">
+              <div class="ticker-drawer-inner">
+                <div class="ticker-detail-grid">
+                  <div class="ticker-detail-item">
+                    <span class="ticker-detail-label">Problem</span>
+                    <p class="ticker-detail-text">Which factors are most associated with diabetes, heart disease, cancer and PCOS?</p>
+                  </div>
+                  <div class="ticker-detail-item">
+                    <span class="ticker-detail-label">Approach</span>
+                    <p class="ticker-detail-text">Loaded 7 public clinical datasets (not India-specific) into SQLite; SQL queries plus 13 visualisations.</p>
+                  </div>
+                  <div class="ticker-detail-item">
+                    <span class="ticker-detail-label">Findings</span>
+                    <p class="ticker-detail-text">Diabetes risk rises about 15x between the 20s and the 60s; hypertension and heart disease together are associated with about 6.4x higher risk. Observational data: associations, not causation.</p>
+                  </div>
+                </div>
+                <a href="https://github.com/gunn0067/india-health-risk-analysis" class="ticker-github-link" target="_blank" rel="noopener noreferrer" aria-label="View India Health Risk Analysis repository on GitHub, opens in a new tab">
+                  View on GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: RESEARCH & PATENT
+         ==================================================================== -->
+    <section class="content-section" id="research" aria-labelledby="researchHeading">
+      <div class="section-container">
+        <header class="section-header reveal">
+          <div class="section-header-top">
+            <span class="section-accent-tick" aria-hidden="true"></span>
+            <span class="section-eyebrow">Intellectual Property &amp; Papers</span>
+          </div>
+          <h2 class="section-title" id="researchHeading">Research &amp; Patent</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </header>
+
+        <div class="plain-list reveal">
+          <!-- Merged Churn Topic: Patent + Research -->
+          <article class="plain-list-item">
+            <span class="plain-tag">Patent + Research</span>
+            <div class="plain-content">
+              <h3 class="plain-title">Customer churn prediction for banking</h3>
+              <div class="plain-sub-items">
+                <!-- Sub-item 1: Patent Application -->
+                <div class="plain-sub-item">
+                  <span class="plain-sub-tag">Patent application · Co-inventor</span>
+                  <h4 class="plain-sub-title">Machine Learning Based Customer Churn Prediction System for Banking Sector Using Subscription and Tenure Analysis</h4>
+                  <p class="plain-sub-meta">Indian Patent Office · App. No. 202621011687 · Filed 3 Feb 2026, published 20 Mar 2026</p>
+                </div>
+
+                <!-- Thin Hairline Divider -->
+                <div class="plain-sub-divider" aria-hidden="true"></div>
+
+                <!-- Sub-item 2: Research Paper -->
+                <div class="plain-sub-item">
+                  <span class="plain-sub-tag">Research paper · Co-author</span>
+                  <h4 class="plain-sub-title">Customer Churn in the Banking Sector: A Machine Learning Approach Using Subscription and Tenure</h4>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Research Paper 2 -->
+          <article class="plain-list-item">
+            <span class="plain-tag">Research</span>
+            <div class="plain-content">
+              <h3 class="plain-title">Predictive Analysis of Autism Spectrum Disorder Using Machine Learning</h3>
+              <p class="plain-meta"><strong>Co-author</strong></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: SKILLS
+         ==================================================================== -->
+    <section class="content-section" id="skills" aria-labelledby="skillsHeading">
+      <div class="section-container">
+        <header class="section-header reveal">
+          <div class="section-header-top">
+            <span class="section-accent-tick" aria-hidden="true"></span>
+            <span class="section-eyebrow">Technical Capabilities</span>
+          </div>
+          <h2 class="section-title" id="skillsHeading">Skills</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </header>
+
+        <div class="skills-grid reveal">
+          <div class="skill-row">
+            <span class="skill-group-name">Languages</span>
+            <div class="skill-items">
+              Python, SQL, JavaScript, HTML/CSS, Java <span class="skill-learning-note">(learning)</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <span class="skill-group-name">Data</span>
+            <div class="skill-items">
+              Pandas, Matplotlib, Seaborn, SQLite
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <span class="skill-group-name">ML</span>
+            <div class="skill-items">
+              Random Forest, XGBoost, SMOTE, SHAP
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <span class="skill-group-name">Tools</span>
+            <div class="skill-items">
+              Git, GitHub, Jupyter, Google Colab, VS Code
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: EXPERIENCE & LEADERSHIP
+         ==================================================================== -->
+    <section class="content-section" id="experience" aria-labelledby="expHeading">
+      <div class="section-container">
+        <header class="section-header reveal">
+          <div class="section-header-top">
+            <span class="section-accent-tick" aria-hidden="true"></span>
+            <span class="section-eyebrow">Trajectory</span>
+          </div>
+          <h2 class="section-title" id="expHeading">Experience &amp; Leadership</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </header>
+
+        <div class="experience-list reveal">
+          <!-- Internship -->
+          <article class="experience-item">
+            <span class="experience-period">May–Jun 2026</span>
+            <div class="experience-details">
+              <h3 class="experience-role">Marketing &amp; Growth Intern · Kelicalix Technologies</h3>
+              <p class="experience-summary">Remote. Content strategy across 5 social profiles, 150+ creatives.</p>
+            </div>
+          </article>
+
+          <!-- Forage Job Simulations -->
+          <article class="experience-item">
+            <span class="experience-period">Simulations</span>
+            <div class="experience-details">
+              <h3 class="experience-role">Forage Job Simulations</h3>
+              <p class="experience-summary">Deloitte (Data Analytics), JPMorgan Chase (Software Engineering: Kafka, REST APIs, H2), Accenture UK (Developer &amp; Technology).</p>
+            </div>
+          </article>
+
+          <!-- Leadership 1 -->
+          <article class="experience-item">
+            <span class="experience-period">Leadership</span>
+            <div class="experience-details">
+              <h3 class="experience-role">Lead, Communication and Media Cell · SIT</h3>
+              <p class="experience-summary">Directing institutional media communications and cross-channel publications.</p>
+            </div>
+          </article>
+
+          <!-- Leadership 2 -->
+          <article class="experience-item">
+            <span class="experience-period">Design</span>
+            <div class="experience-details">
+              <h3 class="experience-role">Co-Lead Designer, Branding Club · SIT</h3>
+              <p class="experience-summary">Led design for Enthusia 5.0.</p>
+            </div>
+          </article>
+
+          <!-- Education -->
+          <article class="experience-item">
+            <span class="experience-period">2024–2028</span>
+            <div class="experience-details">
+              <h3 class="experience-role">B.Tech Computer Science · Symbiosis Institute of Technology</h3>
+              <p class="experience-summary">Undergraduate studies focused on data structures, algorithms, databases, and applied machine learning.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: CONTACT
+         ==================================================================== -->
+    <section class="content-section" id="contact" aria-labelledby="contactHeading">
+      <div class="section-container">
+        <header class="section-header reveal">
+          <div class="section-header-top">
+            <span class="section-accent-tick" aria-hidden="true"></span>
+            <span class="section-eyebrow">Get in touch</span>
+          </div>
+          <h2 class="section-title" id="contactHeading">Contact</h2>
+          <div class="section-divider" aria-hidden="true"></div>
+        </header>
+
+        <div class="contact-layout reveal">
+          <!-- Contact Left: Editorial headline, Direct email & Copy button -->
+          <div class="contact-direct">
+            <h3 class="contact-headline">Let's talk.</h3>
+
+            <!-- Email Display with Clipboard Copy Button -->
+            <div class="email-box">
+              <span class="email-address" id="emailText">fulwanigunn06@gmail.com</span>
+              <button class="copy-btn" id="copyEmailBtn" type="button" aria-label="Copy Gunn's email address to clipboard">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy</span>
+              </button>
+            </div>
+
+            <!-- Persistent Links in Contact Section -->
+            <div class="contact-links">
+              <a href="https://github.com/gunn0067/self-portfolio-" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Gunn's GitHub profile, opens in a new tab">GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/gunn-fulwani" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Gunn's LinkedIn profile, opens in a new tab">LinkedIn ↗</a>
+              <a href="mailto:fulwanigunn06@gmail.com" class="contact-link" aria-label="Send email to Gunn Fulwani">Email</a>
+            </div>
+          </div>
+
+          <!-- Contact Right: Live-Validated Semantic Form -->
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="senderName">Name</label>
+              <input class="form-input" type="text" id="senderName" name="name" required minlength="2" placeholder="Your name" autocomplete="name" aria-describedby="nameError">
+              <span class="form-error" id="nameError" role="alert" aria-live="polite">Name must be at least 2 characters.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="senderEmail">Email</label>
+              <input class="form-input" type="email" id="senderEmail" name="email" required placeholder="your.email@domain.com" autocomplete="email" aria-describedby="emailError">
+              <span class="form-error" id="emailError" role="alert" aria-live="polite">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="senderMessage">Message</label>
+              <textarea class="form-textarea" id="senderMessage" name="message" required minlength="10" placeholder="Tell me about your project, team, or internship opportunity..." aria-describedby="messageError"></textarea>
+              <span class="form-error" id="messageError" role="alert" aria-live="polite">Message must be at least 10 characters.</span>
+            </div>
+
+            <button class="submit-btn" id="submitBtn" type="submit" disabled>
+              <span>Send Message</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+
+            <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification Feedback Component -->
+  <div class="toast-notice" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="footer-copy">© 2026 Gunn Fulwani</p>
+      <div class="footer-links">
+        <a href="https://github.com/gunn0067/self-portfolio-" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="Gunn's GitHub profile, opens in a new tab">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/gunn-fulwani" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="Gunn's LinkedIn profile, opens in a new tab">LinkedIn ↗</a>
+        <a href="mailto:fulwanigunn06@gmail.com" class="footer-link" aria-label="Send email to Gunn Fulwani">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript Application Script -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
