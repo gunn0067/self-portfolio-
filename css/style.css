@@ -47,6 +47,7 @@ html {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -160,7 +161,7 @@ ul, ol {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(0.75rem, 1.6vw, 1.75rem);
 }
 
 .nav-link {
@@ -169,6 +170,7 @@ ul, ol {
   letter-spacing: 0.02em;
   position: relative;
   padding: 0.25rem 0;
+  white-space: nowrap;
   transition: color 0.25s ease;
 }
 
@@ -187,6 +189,11 @@ ul, ol {
   width: 100%;
   height: 1px;
   background-color: var(--accent);
+}
+
+/* Mobile Menu Drawer Links (Hidden on Desktop) */
+.mobile-menu-links {
+  display: none;
 }
 
 /* Right Nav Links */
@@ -561,11 +568,11 @@ body[data-intro="settled"] .hero-aftermath {
    -------------------------------------------------------------------------- */
 .hero-aftermath {
   width: 100%;
-  max-width: 680px;
+  max-width: var(--max-width);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2.25rem;
   transition: opacity 0.8s var(--ease-spring), transform 0.8s var(--ease-spring);
 }
 
@@ -576,12 +583,82 @@ body[data-intro="settled"] .hero-aftermath {
 .hero-seq-4 { transition-delay: 0.50s; }
 .hero-seq-5 { transition-delay: 0.65s; }
 
-.hero-identity {
-  font-size: clamp(1rem, 2vw, 1.35rem);
-  font-weight: 300;
+/* Hero Profile & Introduction — Seamless full-width editorial layout (Card container removed) */
+.hero-profile-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  text-align: left;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.hero-portrait {
+  width: clamp(260px, 28vw, 330px);
+  height: clamp(310px, 34vw, 395px);
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 1px solid var(--hairline);
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.65);
+}
+
+.hero-profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-profile-name {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.8vw, 2.85rem);
+  font-weight: 700;
   color: var(--text);
-  line-height: 1.5;
-  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.hero-profile-intro {
+  font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 1rem;
+  max-width: 650px;
+}
+
+@media (max-width: 680px) {
+  .hero-profile-block {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.75rem;
+    padding: 0;
+  }
+
+  .hero-portrait {
+    width: clamp(200px, 55vw, 260px);
+    height: clamp(240px, 66vw, 315px);
+    margin: 0 auto;
+  }
+
+  .hero-profile-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-profile-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
 }
 
 /* Chart sparkline SVG line */
@@ -1091,7 +1168,129 @@ body[data-intro="settled"] .sparkline-line {
 }
 
 /* --------------------------------------------------------------------------
-   10. SKILLS SECTION (TYPOGRAPHIC GROUPED LIST)
+   10. CERTIFICATES GALLERY SECTION
+   -------------------------------------------------------------------------- */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.certificate-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.certificate-link {
+  display: block;
+  overflow: hidden;
+  background-color: #0b0b0d;
+  aspect-ratio: 1200 / 848;
+  position: relative;
+  border-bottom: 1px solid var(--hairline-subtle);
+}
+
+.certificate-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.certificate-card:hover .certificate-img {
+  transform: scale(1.02);
+}
+
+.certificate-info {
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.certificate-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.certificate-issuer {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+.certificate-meta-row {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.certificate-date {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.certificate-badge {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.certificate-credential-link {
+  font-size: 0.75rem;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.certificate-credential-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 980px) {
+  .certificates-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .certificates-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. SKILLS SECTION (TYPOGRAPHIC GROUPED LIST)
    -------------------------------------------------------------------------- */
 .skills-grid {
   border-top: 1px solid var(--hairline);
@@ -1168,8 +1367,105 @@ body[data-intro="settled"] .sparkline-line {
   line-height: 1.6;
 }
 
+.experience-meta {
+  font-size: 0.8125rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.experience-bullets {
+  list-style: none;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.experience-bullets li {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.55;
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.experience-bullets li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--hairline);
+}
+
 /* --------------------------------------------------------------------------
-   12. CONTACT SECTION & INTERACTIVE FORM
+   13. RESUME SECTION
+   -------------------------------------------------------------------------- */
+.resume-card {
+  background-color: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 680px;
+}
+
+.resume-description {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.resume-file-size {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-left: 0.35rem;
+}
+
+.resume-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.resume-btn-primary {
+  background-color: var(--text);
+  color: var(--bg);
+  border: 1px solid var(--text);
+}
+
+.resume-btn-primary:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.resume-btn-secondary {
+  color: var(--muted);
+  border: 1px solid var(--hairline);
+  background: transparent;
+}
+
+.resume-btn-secondary:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   14. CONTACT SECTION & INTERACTIVE FORM
    -------------------------------------------------------------------------- */
 .contact-layout {
   display: grid;
@@ -1471,13 +1767,22 @@ body[data-intro="settled"] .sparkline-line {
     align-items: flex-start;
     padding: 6rem 2rem 2rem;
     gap: 1.5rem;
-    transform: translateX(100%);
-    transition: transform 0.35s var(--ease-spring);
+    display: none;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
   }
 
   .nav-menu.is-active {
-    transform: translateX(0);
+    display: flex;
+    animation: drawerSlideIn 0.3s var(--ease-spring);
+  }
+
+  @keyframes drawerSlideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
   }
 
   .mobile-nav-toggle {
@@ -1504,8 +1809,13 @@ body[data-intro="settled"] .sparkline-line {
   }
 
   .ticker-header {
-    grid-template-columns: 2.25rem 1fr auto;
-    gap: 1rem;
+    grid-template-columns: 2rem minmax(0, 1fr) auto;
+    gap: 0.75rem;
+  }
+
+  .ticker-name {
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .ticker-tags {

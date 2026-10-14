@@ -1,4 +1,4 @@
-$port = 8080
+$port = 8000
 $prefix = "http://localhost:$port/"
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add($prefix)
@@ -41,6 +41,10 @@ while ($listener.IsListening) {
                 ".css"  { $response.ContentType = "text/css; charset=utf-8" }
                 ".js"   { $response.ContentType = "application/javascript; charset=utf-8" }
                 ".svg"  { $response.ContentType = "image/svg+xml" }
+                ".jpg"  { $response.ContentType = "image/jpeg" }
+                ".jpeg" { $response.ContentType = "image/jpeg" }
+                ".png"  { $response.ContentType = "image/png" }
+                ".pdf"  { $response.ContentType = "application/pdf" }
                 ".json" { $response.ContentType = "application/json" }
                 default { $response.ContentType = "application/octet-stream" }
             }
