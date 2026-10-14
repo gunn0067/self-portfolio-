@@ -1,4 +1,4 @@
-﻿# Operating System files
+# Operating System files
 .DS_Store
 Thumbs.db
 desktop.ini
@@ -9,3 +9,7 @@ desktop.ini
 
 # Logs
 *.log
+
+# Loose upload files at root (organized copies are in assets/)
+/*.pdf
+/Techfest IITB/
